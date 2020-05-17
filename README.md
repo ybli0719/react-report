@@ -1,2 +1,2 @@
 # react-report
-Configurable report
+Configurable report with react
