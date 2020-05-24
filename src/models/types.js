@@ -1,0 +1,1 @@
+export const GRIDLAYOUT_DATA = 'GRIDLAYOUT_DATA'
