@@ -1,18 +1,15 @@
-import React, { useState, memo, useCallback } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Result from './Result';
+import React from 'react'
+import { HashRouter, Route, Switch } from 'react-router-dom'
+import GridLayout from './layout/GridLayout'
 
 function App() {
-  console.log('app')
-
   return (
-    <div className="App">
-      <Result />
-    </div>
-  );
+    <HashRouter>
+      <Switch>
+        <Route path='/' component={GridLayout} />
+      </Switch>
+    </HashRouter>
+  )
 }
 
-
-
-export default App;
+export default App
