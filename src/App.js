@@ -6,7 +6,7 @@ function App() {
   return (
     <HashRouter>
       <Switch>
-        <Route path='/' component={GridLayout} />
+        <Route path='/' exact component={GridLayout} />
       </Switch>
     </HashRouter>
   )

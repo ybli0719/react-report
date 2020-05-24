@@ -1,11 +1,17 @@
-import React, { memo, useState } from 'react'
-import { Layout, Button } from 'antd'
+import React, { memo } from 'react'
+import { Layout } from 'antd'
+import GridCard from '@/views/GridLayout/GridCard'
 
-const { Header } = Layout
+const { Header, Content } = Layout
+
 const GridLayout = () => {
   return (
-    <Layout>
-      <Button type='primary'>1</Button>
+    <Layout className='layout' style={{minHeight: '100vh'}}>
+      <Header>
+      </Header>
+      <Content style={{ padding: 20 }}>
+        <GridCard />
+      </Content>
     </Layout>
   )
 }

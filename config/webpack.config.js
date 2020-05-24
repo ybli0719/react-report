@@ -45,7 +45,7 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const cssRegex = /\.css$/;
+const cssRegex = /\.(css|less)$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
@@ -108,6 +108,10 @@ module.exports = function(webpackEnv) {
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       },
+      {
+        loader: require.resolve('less-loader'),
+        options: {lessOptions: cssOptions}
+      }
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push(
@@ -442,6 +446,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
+                modules: true,
                 modules: {
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
@@ -474,6 +479,7 @@ module.exports = function(webpackEnv) {
                 {
                   importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modules: true,
                   modules: {
                     getLocalIdent: getCSSModuleLocalIdent,
                   },
