@@ -1,6 +1,6 @@
-import React, { memo } from 'react'
-import { Layout } from 'antd'
 import GridCard from '@/views/GridLayout/GridCard'
+import { Layout } from 'antd'
+import React, { memo } from 'react'
 
 const { Header, Content } = Layout
 

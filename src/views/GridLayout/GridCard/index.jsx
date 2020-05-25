@@ -1,10 +1,9 @@
-import React, { memo, useState, useMemo, useCallback } from 'react'
-import { Card, Button } from 'antd'
-import { WidthProvider, Responsive } from 'react-grid-layout'
-import _ from 'lodash'
+import ChartsWidget from '@/components/ChartsWidget'
+import { Button, Card } from 'antd'
+import React, { memo, useCallback, useMemo, useState } from 'react'
+import { Responsive, WidthProvider } from 'react-grid-layout'
 import 'react-grid-layout/css/styles.css'
 import 'react-resizable/css/styles.css'
-import ChartsWidget from '@/components/ChartsWidget'
 
 const ResponsiveReactGridLayot = WidthProvider(Responsive)
 const defaultGridProps = {
@@ -48,16 +47,16 @@ const GridCard = () => {
     [],
   )
 
-  const extra = useMemo(() =>
+  const extra = useMemo(() => (
     <Button
       type='link'
       onClick={addWidget}
     >
       add
     </Button>
-  , [addWidget])
+  ), [addWidget])
 
-  const generateDom = useMemo(() => _.map(widgets, (v, i) => {
+  const generateDom = useMemo(() => widgets.map((v, i) => {
     return (
       <div key={v.i} data-grid={v}>
         <span className='remove' onClick={removeWidget(i)}>x</span>
@@ -66,7 +65,6 @@ const GridCard = () => {
     )
   }), [widgets])
 
-  console.log(layouts)
   return (
     <Card
       title='charts'

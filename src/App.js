@@ -1,6 +1,7 @@
+import lazy from '@/components/lazyImport'
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
-import GridLayout from './layout/GridLayout'
+const GridLayout = lazy(() => import('@/layout/GridLayout'))
 
 function App() {
   return (
