@@ -1,6 +1,6 @@
-import React, { memo } from 'react'
 import ReactEcharts from 'echarts-for-react'
-import './styles.less'
+import React, { memo } from 'react'
+
 const option = {
   xAxis: {
     type: 'category',
